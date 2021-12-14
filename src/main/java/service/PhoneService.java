@@ -1,8 +1,8 @@
 package service;
 
 import model.Phone;
-import phoneComparator.PhoneComparatorByCompany;
-import phoneComparator.PhoneComparatorByPrice;
+import phoneComparator.PhoneByCompanyComparator;
+import phoneComparator.PhoneByPriceComparator;
 import phoneException.IncorrectArgumentPhoneException;
 
 import java.util.List;
@@ -18,10 +18,9 @@ public class PhoneService {
         if (phones.size() <= 0) {
             throw new IncorrectArgumentPhoneException("List is empty");
         }
-        phones = phones.stream()
-                .sorted(new PhoneComparatorByPrice())
+        return phones.stream()
+                .sorted(new PhoneByPriceComparator())
                 .collect(Collectors.toList());
-        return phones;
     }
 
     /**
@@ -31,10 +30,9 @@ public class PhoneService {
         if (phones.size() <= 0) {
             throw new IncorrectArgumentPhoneException("List is empty");
         }
-        phones = phones.stream()
-                .sorted(new PhoneComparatorByCompany())
+        return phones.stream()
+                .sorted(new PhoneByCompanyComparator())
                 .collect(Collectors.toList());
-        return phones;
     }
 
     /**
@@ -47,10 +45,9 @@ public class PhoneService {
         if (limit > phones.size() - 1 || limit <= 0) {
             throw new IncorrectArgumentPhoneException("Incorrect argument limit exception");
         }
-        phones = phones.stream()
+        return phones.stream()
                 .limit(limit)
                 .collect(Collectors.toList());
-        return phones;
     }
 
     /**
@@ -63,10 +60,9 @@ public class PhoneService {
         if (skip >= phones.size() || skip <= 0) {
             throw new IncorrectArgumentPhoneException("Incorrect argument skip exception");
         }
-        phones = phones.stream()
+        return phones.stream()
                 .skip(skip)
                 .collect(Collectors.toList());
-        return phones;
     }
 
     /**
@@ -76,10 +72,10 @@ public class PhoneService {
         if (phones.size() <= 0) {
             throw new IncorrectArgumentPhoneException("List of phones zero or below");
         }
-        Optional<Integer> sumOfPhones = phones.stream()
+        return phones.stream()
                 .map(Phone::getPrice)
-                .reduce(Integer::sum);
-        return sumOfPhones.get();
+                .reduce(Integer::sum)
+                .orElseThrow(() -> new RuntimeException("Something went wrong while cost calculation"));
     }
 
     /**

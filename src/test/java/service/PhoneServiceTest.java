@@ -1,7 +1,7 @@
 package service;
 
 import model.Phone;
-import model.Phones;
+import util.TestDataUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import phoneException.IncorrectArgumentPhoneException;
@@ -15,8 +15,8 @@ public class PhoneServiceTest {
 
     @Test(description = "Testing correctness of sorting by price")
     public void sortedByPriceTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = Phones.SORTEDLISTBYPRICE;
-        List<Phone> actual = phoneService.sortByPrice(Phones.DEFAULTLIST);
+        List<Phone> expected = TestDataUtil.SORTEDLISTBYPRICE;
+        List<Phone> actual = phoneService.sortByPrice(TestDataUtil.DEFAULTLIST);
         Assert.assertEquals(actual, expected);
     }
 
@@ -29,8 +29,8 @@ public class PhoneServiceTest {
 
     @Test(description = "Testing correctness of sorting by company")
     public void sortedByCompanyTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = Phones.SORTEDLISTBYCOMPANY;
-        List<Phone> actual = phoneService.sortByCompany(Phones.DEFAULTLIST);
+        List<Phone> expected = TestDataUtil.SORTEDLISTBYCOMPANY;
+        List<Phone> actual = phoneService.sortByCompany(TestDataUtil.DEFAULTLIST);
         Assert.assertEquals(actual, expected);
     }
 
@@ -43,8 +43,8 @@ public class PhoneServiceTest {
 
     @Test(description = "Testing correctness of limiting phones in the list")
     public void limitPhoneTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = Phones.LIMITEDLIST;
-        List<Phone> actual = phoneService.limitPhone(Phones.DEFAULTLIST, 2);
+        List<Phone> expected = TestDataUtil.LIMITEDLIST;
+        List<Phone> actual = phoneService.limitPhone(TestDataUtil.DEFAULTLIST, 2);
         Assert.assertEquals(actual, expected);
     }
 
@@ -57,8 +57,8 @@ public class PhoneServiceTest {
 
     @Test(description = "Testing correctness of skipping phones in the list")
     public void skipPhonesTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = Phones.SKIPPEDPHONESLIST;
-        List<Phone> actual = phoneService.skipPhones(Phones.DEFAULTLIST, 2);
+        List<Phone> expected = TestDataUtil.SKIPPEDPHONESLIST;
+        List<Phone> actual = phoneService.skipPhones(TestDataUtil.DEFAULTLIST, 2);
         Assert.assertEquals(actual, expected);
     }
 
@@ -72,8 +72,8 @@ public class PhoneServiceTest {
     @Test(description = "Testing correctness of the total cost of all" +
             "phones in the list")
     public void costOfAllPhonesTest() throws IncorrectArgumentPhoneException {
-        long expected = Phones.COSTOFALLPHONES;
-        long actual = phoneService.costOfAllPhones(Phones.DEFAULTLIST);
+        long expected = TestDataUtil.COSTOFALLPHONES;
+        long actual = phoneService.costOfAllPhones(TestDataUtil.DEFAULTLIST);
         Assert.assertEquals(actual, expected);
     }
 
@@ -87,8 +87,8 @@ public class PhoneServiceTest {
     @Test(description = "Testing correctness of the total cost of all" +
             "phones in the list")
     public void phonesByCompanyTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = Phones.LISTOFPHONEBYCOMPANY;
-        List<Phone> actual = phoneService.phonesByCompany(Phones.DEFAULTLIST, Phones.NAMEOFCOMPANY);
+        List<Phone> expected = TestDataUtil.LISTOFPHONEBYCOMPANY;
+        List<Phone> actual = phoneService.phonesByCompany(TestDataUtil.DEFAULTLIST, TestDataUtil.NAMEOFCOMPANY);
         Assert.assertEquals(actual, expected);
     }
 
