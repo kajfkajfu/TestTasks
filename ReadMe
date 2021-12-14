@@ -4,4 +4,4 @@
 Пакет phoneException содержит custom exception.
 Пакет PhoneService содержит класс PhoneService с рядом методов для работы с классом Phone с помощью Collections и Stream API.
 Пакет Содержит два класса: CustomWebDriver - инициализирует WebDriver, WebCalc - содержит ряд методов для работы с веб калькулятором (https://juliemr.github.io/protractor-demo).
-Все тесты классы находятся в такой же иерархии пакетов, что и тестируемые классы.
+Все тест-классы находятся в такой же иерархии пакетов, что и тестируемые классы.
