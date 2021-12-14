@@ -1,6 +1,6 @@
 package phoneComparator;
 
-import entity.Phone;
+import model.Phone;
 
 import java.util.Comparator;
 

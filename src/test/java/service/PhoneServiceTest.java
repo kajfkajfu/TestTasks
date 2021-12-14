@@ -1,7 +1,7 @@
 package service;
 
-import entity.Phone;
-import entity.Phones;
+import model.Phone;
+import model.Phones;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import phoneException.IncorrectArgumentPhoneException;

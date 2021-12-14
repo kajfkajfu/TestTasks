@@ -1,6 +1,4 @@
-package entity;
-
-import entity.Phone;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package service;
 
-import entity.Phone;
+import model.Phone;
 import phoneComparator.PhoneComparatorByCompany;
 import phoneComparator.PhoneComparatorByPrice;
 import phoneException.IncorrectArgumentPhoneException;
