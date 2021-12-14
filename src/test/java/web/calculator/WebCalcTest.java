@@ -45,4 +45,13 @@ public class WebCalcTest {
         String expected = "50";
         Assert.assertEquals(actual, expected);
     }
+
+    @Test(description = "testing multiplication of two numbers")
+    void subtractionTest() throws InterruptedException {
+        webCalc.subtraction(10, 5);
+        Thread.sleep(THREAD_SLEEP_TIME);
+        String actual = webCalc.DRIVER.findElement(By.cssSelector(CSS_SELECTOR)).getText();
+        String expected = "5";
+        Assert.assertEquals(actual, expected);
+    }
 }

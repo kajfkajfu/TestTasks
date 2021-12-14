@@ -22,6 +22,12 @@ public class WebCalc {
             "/div/div/form/select/option[5]"));
 
 
+    /**
+     * Adding two numbers
+     *
+     * @param firstNumber the first number
+     * @param secondNumber the second number
+     */
     public void addition(int firstNumber, int secondNumber) {
         String first = String.valueOf(firstNumber);
         String second = String.valueOf(secondNumber);
@@ -31,6 +37,12 @@ public class WebCalc {
         GO_BUTTON.click();
     }
 
+    /**
+     * Division of two numbers
+     *
+     * @param firstNumber the first number
+     * @param secondNumber the second number
+     */
     public void divide(int firstNumber, int secondNumber) {
         String first = String.valueOf(firstNumber);
         String second = String.valueOf(secondNumber);
@@ -49,6 +61,12 @@ public class WebCalc {
         GO_BUTTON.click();
     }
 
+    /**
+     * multiplication two numbers
+     *
+     * @param firstNumber the first number
+     * @param secondNumber the second number
+     */
     public void multiplication(int firstNumber, int secondNumber) {
         String first = String.valueOf(firstNumber);
         String second = String.valueOf(secondNumber);
@@ -58,6 +76,12 @@ public class WebCalc {
         GO_BUTTON.click();
     }
 
+    /**
+     * subtracting two numbers
+     *
+     * @param firstNumber the first number
+     * @param secondNumber the second number
+     */
     public void subtraction(int firstNumber, int secondNumber) {
         String first = String.valueOf(firstNumber);
         String second = String.valueOf(secondNumber);

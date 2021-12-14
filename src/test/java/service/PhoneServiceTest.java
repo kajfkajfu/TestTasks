@@ -14,94 +14,94 @@ public class PhoneServiceTest {
     PhoneService phoneService = new PhoneService();
 
     @Test(description = "Testing correctness of sorting by price")
-    public void sortedByPriceTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = TestDataUtil.SORTEDLISTBYPRICE;
-        List<Phone> actual = phoneService.sortByPrice(TestDataUtil.DEFAULTLIST);
+    public void sortedBy_PriceTest() throws IncorrectArgumentPhoneException {
+        List<Phone> expected = TestDataUtil.SORTED_LIST_BY_PRICE;
+        List<Phone> actual = phoneService.sortByPrice(TestDataUtil.DEFAULT_LIST);
         Assert.assertEquals(actual, expected);
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if list is Empty")
-    public void sortedByPriceException() throws IncorrectArgumentPhoneException {
+    public void sortedByPrice_ExceptionTest() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.sortByPrice(emptyList);
     }
 
     @Test(description = "Testing correctness of sorting by company")
-    public void sortedByCompanyTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = TestDataUtil.SORTEDLISTBYCOMPANY;
-        List<Phone> actual = phoneService.sortByCompany(TestDataUtil.DEFAULTLIST);
+    public void sortedBy_CompanyTest() throws IncorrectArgumentPhoneException {
+        List<Phone> expected = TestDataUtil.SORTED_LIST_BY_COMPANY;
+        List<Phone> actual = phoneService.sortByCompany(TestDataUtil.DEFAULT_LIST);
         Assert.assertEquals(actual, expected);
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if list is empty")
-    public void sortedByCompanyException() throws IncorrectArgumentPhoneException {
+    public void sortedByCompany_ExceptionTest() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.sortByCompany(emptyList);
     }
 
     @Test(description = "Testing correctness of limiting phones in the list")
-    public void limitPhoneTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = TestDataUtil.LIMITEDLIST;
-        List<Phone> actual = phoneService.limitPhone(TestDataUtil.DEFAULTLIST, 2);
+    public void limit_PhoneTest() throws IncorrectArgumentPhoneException {
+        List<Phone> expected = TestDataUtil.LIMITED_LIST;
+        List<Phone> actual = phoneService.limitPhone(TestDataUtil.DEFAULT_LIST, 2);
         Assert.assertEquals(actual, expected);
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if list is empty")
-    public void limitPhoneException() throws IncorrectArgumentPhoneException {
+    public void limitPhone_ExceptionTest() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.limitPhone(emptyList, 2);
     }
 
     @Test(description = "Testing correctness of skipping phones in the list")
-    public void skipPhonesTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = TestDataUtil.SKIPPEDPHONESLIST;
-        List<Phone> actual = phoneService.skipPhones(TestDataUtil.DEFAULTLIST, 2);
+    public void skip_PhonesTest() throws IncorrectArgumentPhoneException {
+        List<Phone> expected = TestDataUtil.SKIPPED_PHONES_LIST;
+        List<Phone> actual = phoneService.skipPhones(TestDataUtil.DEFAULT_LIST, 2);
         Assert.assertEquals(actual, expected);
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if list is empty")
-    public void skipPhoneException() throws IncorrectArgumentPhoneException {
+    public void skipPhone_ExceptionTest() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.skipPhones(emptyList, 2);
     }
 
     @Test(description = "Testing correctness of the total cost of all" +
             "phones in the list")
-    public void costOfAllPhonesTest() throws IncorrectArgumentPhoneException {
-        long expected = TestDataUtil.COSTOFALLPHONES;
-        long actual = phoneService.costOfAllPhones(TestDataUtil.DEFAULTLIST);
+    public void costOfAllPhones_Test() throws IncorrectArgumentPhoneException {
+        long expected = TestDataUtil.COST_OF_ALL_PHONES;
+        long actual = phoneService.costOfAllPhones(TestDataUtil.DEFAULT_LIST);
         Assert.assertEquals(actual, expected);
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if list is empty")
-    public void costOfAllPhonesException() throws IncorrectArgumentPhoneException {
+    public void cost_OfAllPhones_ExceptionTest() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.costOfAllPhones(emptyList);
     }
 
     @Test(description = "Testing correctness of the total cost of all" +
             "phones in the list")
-    public void phonesByCompanyTest() throws IncorrectArgumentPhoneException {
-        List<Phone> expected = TestDataUtil.LISTOFPHONEBYCOMPANY;
-        List<Phone> actual = phoneService.phonesByCompany(TestDataUtil.DEFAULTLIST, TestDataUtil.NAMEOFCOMPANY);
+    public void phonesByCompany_Test() throws IncorrectArgumentPhoneException {
+        List<Phone> expected = TestDataUtil.LIST_OF_PHONE_BY_COMPANY;
+        List<Phone> actual = phoneService.phonesByCompany(TestDataUtil.DEFAULT_LIST, "Apple");
         Assert.assertEquals(actual, expected);
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if list is empty")
-    public void phonesByCompanyExceptionIfListIsEmpty() throws IncorrectArgumentPhoneException {
+    public void phonesByCompanyExceptionIfList_IsEmptyException() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.phonesByCompany(emptyList, "Apple");
     }
 
     @Test(expectedExceptions = {IncorrectArgumentPhoneException.class},
             description = "Throw Exception if Company name not exist")
-    public void phonesByCompanyExceptionIfCompanyNameNotExist() throws IncorrectArgumentPhoneException {
+    public void phonesByCompany_Exception_IfCompanyName_NotExist() throws IncorrectArgumentPhoneException {
         List<Phone> emptyList = new ArrayList<>();
         phoneService.phonesByCompany(emptyList, "ABCD");
     }
